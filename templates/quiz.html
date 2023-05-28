@@ -1,0 +1,26 @@
+<div class="quiz-box">
+  <h2 class="question">Question: {question}</h2>
+  <ul class="options" id="options{id}">
+    {options}
+  </ul>
+  <a href="#" class="submit-btn" onclick="checkQuiz{id}()">Submit</a>
+  <p id="feedback{id}" style="display: none"></p>
+  <script>
+    const feedback{id} = document.getElementById("feedback{id}");
+    const options{id} = document.querySelectorAll(".option-input{id}");
+
+    const checkQuiz{id} = () => {
+      feedback{id}.style.display = "block";
+      const numberOfOptions = options{id}.length;
+
+      for (let i = 0; i < numberOfOptions; i++) {
+        if (options{id}[i].checked && options{id}[i].classList.contains("true")) {
+          feedback{id}.innerHTML = "Correct!";
+          return;
+        }
+      }
+
+      feedback{id}.innerHTML = "Wrong!";
+    };
+  </script>
+</div>

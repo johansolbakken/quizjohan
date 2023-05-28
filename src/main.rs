@@ -1,4 +1,7 @@
 mod generator;
+mod lexer;
+mod parser;
+mod quiz;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -9,16 +12,31 @@ fn main() {
     let input_file = &args[1];
     let output_dir = &args[2];
 
-    println!("input file: {}", input_file);
-    println!("output directory: {}", output_dir);
+    // Lexing
+    let input_file = std::fs::read_to_string(input_file).unwrap();
+    let mut lexer = lexer::Lexer::new(&input_file);
+    let mut tokens: Vec<lexer::Token> = Vec::new();
+    loop {
+        let token = lexer.lex();
+        tokens.push(token);
+        if tokens[tokens.len() - 1].token_type == lexer::TokenType::EOF {
+            break;
+        }
+    }
+
+    // Parsing
+    parser::parse(&mut tokens);
+
+    // Generation
 
     generator::create_directory(output_dir);
     generator::create_style_sheet(
         &"templates/style.css".to_string(),
         &format!("{}/style.css", output_dir),
     );
-    generator::create_html_file(
+    generator::basic_generate_html(
         &"templates/index.html".to_string(),
         &format!("{}/index.html", output_dir),
+        &tokens,
     );
 }

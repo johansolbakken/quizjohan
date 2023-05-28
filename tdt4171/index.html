@@ -9,10 +9,51 @@
   </head>
   <body>
     <div class="container">
-      <h1>hello, world</h1>
-      <p>hello, world</p>
-      <h2>nihao</h2>
-      <p>hei</p>
+      <h1>TDT4171 - Metoder I ai</h1><h2>Kapittel 1 - Dette er gøy.</h2>Din gjennomsnittsfart er 0.<div class="quiz-box">
+  <h2 class="question">Question:  hva er din gjennomsnittsfart?</h2>
+  <ul class="options" id="options0">
+    <li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input0 true" />
+     0
+  </label>
+</li>
+<li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input0 false" />
+     1
+  </label>
+</li>
+<li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input0 false" />
+     ja
+  </label>
+</li>
+
+  </ul>
+  <a href="#" class="submit-btn" onclick="checkQuiz0()">Submit</a>
+  <p id="feedback0" style="display: none"></p>
+  <script>
+    const feedback0 = document.getElementById("feedback0");
+    const options0 = document.querySelectorAll(".option-input0");
+
+    const checkQuiz0 = () => {
+      feedback0.style.display = "block";
+      const numberOfOptions = options0.length;
+
+      for (let i = 0; i < numberOfOptions; i++) {
+        if (options0[i].checked && options0[i].classList.contains("true")) {
+          feedback0.innerHTML = "Correct!";
+          return;
+        }
+      }
+
+      feedback0.innerHTML = "Wrong!";
+    };
+  </script>
+</div>
+
     </div>
   </body>
 </html>
