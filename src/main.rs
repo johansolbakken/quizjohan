@@ -1,3 +1,5 @@
+mod generator;
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.len() != 3 {
@@ -9,4 +11,14 @@ fn main() {
 
     println!("input file: {}", input_file);
     println!("output directory: {}", output_dir);
+
+    generator::create_directory(output_dir);
+    generator::create_style_sheet(
+        &"templates/style.css".to_string(),
+        &format!("{}/style.css", output_dir),
+    );
+    generator::create_html_file(
+        &"templates/index.html".to_string(),
+        &format!("{}/index.html", output_dir),
+    );
 }
