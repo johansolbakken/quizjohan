@@ -1,12 +1,15 @@
-# TDT4171 - Metoder I ai
+# Quiz
 
-## Kapittel 1 - Dette er gøy.
-
-Din gjennomsnittsfart er 0.
+Litt teori om Uncertainty...
 
 [quiz
-    ? hva er din gjennomsnittsfart?
-    + 0
-    - 1
+    ? P(A,B)=P(A|B)*P(B)
     - ja
+    + nei
+]
+[quiz
+    ? KAtter
+    + ja
+    - nei
+    + kanskje
 ]

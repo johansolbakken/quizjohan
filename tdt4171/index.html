@@ -9,25 +9,19 @@
   </head>
   <body>
     <div class="container">
-      <h1>TDT4171 - Metoder I ai</h1><h2>Kapittel 1 - Dette er gøy.</h2>Din gjennomsnittsfart er 0.<div class="quiz-box">
-  <h2 class="question">Question:  hva er din gjennomsnittsfart?</h2>
+      <h1>Quiz</h1>Litt teori om Uncertainty...<div class="quiz-box">
+  <h2 class="question">Question:  P(A,B)=P(A|B)*P(B)</h2>
   <ul class="options" id="options0">
     <li class="option">
   <label class="option-label">
-    <input type="radio" name="answer" class="option-input0 true" />
-     0
-  </label>
-</li>
-<li class="option">
-  <label class="option-label">
-    <input type="radio" name="answer" class="option-input0 false" />
-     1
-  </label>
-</li>
-<li class="option">
-  <label class="option-label">
     <input type="radio" name="answer" class="option-input0 false" />
      ja
+  </label>
+</li>
+<li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input0 true" />
+     nei
   </label>
 </li>
 
@@ -50,6 +44,50 @@
       }
 
       feedback0.innerHTML = "Wrong!";
+    };
+  </script>
+</div>
+<div class="quiz-box">
+  <h2 class="question">Question:  KAtter</h2>
+  <ul class="options" id="options1">
+    <li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input1 true" />
+     ja
+  </label>
+</li>
+<li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input1 false" />
+     nei
+  </label>
+</li>
+<li class="option">
+  <label class="option-label">
+    <input type="radio" name="answer" class="option-input1 true" />
+     kanskje
+  </label>
+</li>
+
+  </ul>
+  <a href="#" class="submit-btn" onclick="checkQuiz1()">Submit</a>
+  <p id="feedback1" style="display: none"></p>
+  <script>
+    const feedback1 = document.getElementById("feedback1");
+    const options1 = document.querySelectorAll(".option-input1");
+
+    const checkQuiz1 = () => {
+      feedback1.style.display = "block";
+      const numberOfOptions = options1.length;
+
+      for (let i = 0; i < numberOfOptions; i++) {
+        if (options1[i].checked && options1[i].classList.contains("true")) {
+          feedback1.innerHTML = "Correct!";
+          return;
+        }
+      }
+
+      feedback1.innerHTML = "Wrong!";
     };
   </script>
 </div>
