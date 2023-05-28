@@ -1,0 +1,12 @@
+# TDT4171 - Metoder I ai
+
+## Kapittel 1 - Dette er gøy.
+
+Din gjennomsnittsfart er 0.
+
+[quiz
+    ? hva er din gjennomsnittsfart?
+    + 0
+    - 1
+    - ja
+]
