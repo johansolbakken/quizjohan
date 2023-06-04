@@ -1,6 +1,6 @@
 # Quiz app
 
-Markdown style quiz generator.
+Markdown style quiz generator. A custom Markdown language that includes custom commands for creating HTML.
 
 ```markdown
 # Quiz
